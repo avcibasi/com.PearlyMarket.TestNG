@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="my test suite" verbose="1">
+    <test name="SmokeTest>" preserve-order="true">
+        <classes>
+            <class name="user_story_9.tests.VendorRegister">
+                <methods>
+                    <include name="vendorRegisterTest"/>
+                </methods>
+
+            </class>
+            <!-- CLASS 1-->
+            <class name="user_story_9.tests.RegisteredEmail">
+                <methods>
+                    <include name="registeredEmail"/>
+                </methods>
+
+            </class>
+
+        </classes>
+    </test>
+</suite>
