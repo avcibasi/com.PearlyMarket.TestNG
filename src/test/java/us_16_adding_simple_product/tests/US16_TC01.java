@@ -3,9 +3,9 @@ package us_16_adding_simple_product.tests;
 import com.github.javafaker.Faker;
 import org.testng.annotations.Test;
 import us_16_adding_simple_product.pages.HomePage;
-import us_16_adding_simple_product.utilities.ConfigReader;
-import us_16_adding_simple_product.utilities.Driver;
-import us_16_adding_simple_product.utilities.JSUtils;
+import utilities.ConfigReader;
+import utilities.Driver;
+import utilities.JSUtils;
 
 
 import java.io.IOException;
