@@ -9,7 +9,7 @@ import us_06_shopping.pages.CartPage;
 import us_06_shopping.pages.CheckoutPage;
 import us_06_shopping.pages.HomePage;
 import us_06_shopping.pages.ProductsPage;
-import us_06_shopping.utilities.*;
+import utilities.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
