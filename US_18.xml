@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/faruk/Downloads/AllUserStories/src/test/java/user_story_18">
+        <classes>
+            <class name="user_story_18.tests.TC001">
+                <methods>
+                    <include name="US18_TC001"/>
+                </methods>
+            </class>
+            <class name="user_story_18.tests.TC002">
+                <methods>
+                    <include name="US18_TC002"/>
+                </methods>
+            </class>
+            <class name="user_story_18.tests.TC003">
+                <methods>
+                    <include name="US18_TC003"/>
+                </methods>
+            </class>
+            <class name="user_story_18.tests.TC004">
+                <methods>
+                    <include name="US18_TC004"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
