@@ -22,6 +22,7 @@ public class RegisteredEmail extends ExtentReportsBase {
 //        Go to website https://pearlymarket.com/
         Driver.getDriver().get(ConfigReader.getProperty("pearly_market_url"));
         MediaUtils.takeScreenshotOfTheEntirePageAsString();
+
 //        Click on Register link
         pearlyMarketLoginRegisterPage.registerLink.click();
 //        Click on Become a Vendor
