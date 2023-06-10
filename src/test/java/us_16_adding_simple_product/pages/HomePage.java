@@ -10,7 +10,7 @@ public class HomePage {
     public HomePage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
-    @FindBy(xpath = "(//i[@class='w-icon-account'])[1]")
+    @FindBy(xpath = "//span[.='Sign In']")
     public WebElement signInButton;
     @FindBy(id = "username")
     public WebElement usernameInput;
@@ -18,4 +18,7 @@ public class HomePage {
     public WebElement passwordInput;
     @FindBy(xpath = "//button[@name='login']")
     public WebElement signInSubmitButton;
+    @FindBy(xpath = "(//a[.='My Account'])[1]")
+    public WebElement myAccountLink;
+
 }
