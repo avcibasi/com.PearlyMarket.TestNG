@@ -18,7 +18,7 @@ public class SignInPage {
 
 
     @FindBy(xpath = "//input[@id='username']")
-    public WebElement usernameOrEmail;
+    public WebElement username;
 
     //Password to sign in
     @FindBy(id = "password")

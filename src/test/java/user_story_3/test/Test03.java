@@ -11,6 +11,8 @@ import user_story_3.pages.AddressPage;
 import user_story_3.pages.SignInPage;
 import utilities.Driver;
 import utilities.JSUtils;
+import utilities.WaitUtils;
+
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -20,7 +22,7 @@ public class Test03 {
 
     @Test
 
-    public void shippingAddressIsAdded() throws InterruptedException, IOException {
+    public void shippingAddressIsAdded() {
 
         SignInPage signInPage = new SignInPage();
         AddressPage addressPage = new AddressPage();
@@ -29,20 +31,20 @@ public class Test03 {
         Driver.getDriver().get(ConfigReader.getProperty("pearly_market_url"));
         // Click on sign in
         signInPage.signInHome.click();
-        Thread.sleep(500);
+        WaitUtils.waitFor(1);
         // enter a registered username
-        signInPage.usernameOrEmail.sendKeys("merlin");
-        Thread.sleep(500);
+        signInPage.username.sendKeys(ConfigReader.getProperty("us3_username"));
+        WaitUtils.waitFor(1);
         // Enter registered password
-        signInPage.password.sendKeys("rpqxm6B@123");
-        Thread.sleep(500);
+        signInPage.password.sendKeys(ConfigReader.getProperty("us3_password"));
+        WaitUtils.waitFor(1);
         //click on blue sign in button
         signInPage.signIn.click();
-        Thread.sleep(500);
+        WaitUtils.waitFor(1);
         //click on the My Account Button on Main page(very end of the page)
         addressPage.myAccount.click();
-        Thread.sleep(500);
-        //click on Addresses Button on My Acount page
+        WaitUtils.waitFor(1);
+        //click on Addresses Button on My Account page
         addressPage.addressesButton.click();
         // Scroll down with Javascripexecuter
         JSUtils.scrollIntoViewJS(addressPage.scroll);
@@ -50,53 +52,52 @@ public class Test03 {
         JSUtils.clickWithTimeoutByJS(addressPage.billingAddress);
         //Enter first name
         addressPage.firstName.clear();
-        addressPage.firstName.sendKeys("Baris");
-        Thread.sleep(500);
+        addressPage.firstName.sendKeys(ConfigReader.getProperty("us3_firstName"));
+        WaitUtils.waitFor(1);
         //Enter  last name
         addressPage.lastName.clear();
-        addressPage.lastName.sendKeys("Manco");
+        addressPage.lastName.sendKeys(ConfigReader.getProperty("us3_lastName"));
         // Select Country
         //WebElement dropDown = addressPage.country;
         //Select select = new Select(dropDown);
         //select.deselectAll();
         //select.selectByIndex(15);
         //dropDown.click();
-        //Click Shipping Country/Region
 
         //Enter  Street Address
         addressPage.streetAddress.clear();
-        addressPage.streetAddress.sendKeys("7 den 70 e");
+        addressPage.streetAddress.sendKeys(ConfigReader.getProperty("us3_streetAddress"));
 
         //Enter  Town/City
         addressPage.townCity.clear();
-        addressPage.townCity.sendKeys("Moda");
+        addressPage.townCity.sendKeys(ConfigReader.getProperty("us3_town"));
 
         //Click  State
       // WebElement stateDropDown =   addressPage.state;
       // Select select =  new Select(stateDropDown);
        //select.selectByIndex(2);
         //Enter Shipping Postcode
-        addressPage.shippingPostcode.clear();
-        addressPage.shippingPostcode.sendKeys("81300");
+        addressPage.zipcode.clear();
+        addressPage.zipcode.sendKeys(ConfigReader.getProperty("us3_zipcode"));
 
         //Enter Telephone Number
         addressPage.phone.clear();
-        addressPage.phone.sendKeys("0212212212");
+        addressPage.phone.sendKeys(ConfigReader.getProperty("us3_phone"));
 
         //Verify that The registered email address  filled in automatically
         String expected =addressPage.email.getAttribute("value");
-        String actual = "merlin.syd@fullangle.org";
-        Assert.assertEquals(expected,actual);
+        //String actual=ConfigReader.getProperty("us3_email")
+        Assert.assertEquals(expected,ConfigReader.getProperty("us3_email"));
        //Scroll down, Click to save address button
-        Thread.sleep(1000);
+        WaitUtils.waitFor(1);
         JSUtils.scrollAllTheWayDownJS();
-        Thread.sleep(1000);
+        WaitUtils.waitFor(1);
         JSUtils.scrollIntoViewJS(addressPage.saveAddress);
         addressPage.saveAddress.click();
-        Thread.sleep(1500);
+        WaitUtils.waitFor(3);
         //verify that the Billing Address be added
-        Assert.assertEquals(addressPage.savedAddress.getText(),"The following addresses will be used on the checkout page by default.");
-
+        Assert.assertEquals(addressPage.savedAddress.getText(),ConfigReader.getProperty("us3_expected"));
+        Driver.closeDriver();
     }
 }
 
