@@ -54,9 +54,9 @@ public class AddressPage {
 
 
 
-    //Shipping Postcode
+    //Zip code
     @FindBy(xpath = "//input[@id='billing_postcode']")
-    public WebElement shippingPostcode;
+    public WebElement zipcode;
 
     //Phone Number
     @FindBy(id="billing_phone")
