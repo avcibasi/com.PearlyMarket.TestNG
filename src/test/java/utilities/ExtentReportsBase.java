@@ -15,9 +15,9 @@ import java.util.Date;
 
 public abstract class ExtentReportsBase {
     protected static WebDriver driver;
-    protected static ExtentReports extentReports;
+    public static ExtentReports extentReports;
     protected static ExtentHtmlReporter extentHtmlReporter;
-    protected static ExtentTest extentTest;
+    public static ExtentTest extentTest;
     @BeforeClass
     public static void extentReportsSetup(){
 //        WHAT WILL BE REPORT NAME AND WHERE THE REPORT IS CREATED
