@@ -56,6 +56,7 @@ public class TC004 {
         pearlyManagerPage.couponAmount.sendKeys("5");
         //7. Set an expiration date for the coupon at past date.
         pearlyManagerPage.expiryDate.sendKeys("2001-05-24");
+        ExtentReportUtils.passAndCaptureScreenshot("Filling a coupon date att past");
         //8. Select the "Allow free shipping" option.
         JSUtils.clickWithTimeoutByJS(pearlyManagerPage.freeShipping);
         //9. Select the "Show on store" option.
@@ -66,6 +67,8 @@ public class TC004 {
         ExtentReportUtils.passAndCaptureScreenshot("Filling coupon before creation with past date");
 
         //Assert coupon creation doesnt happens succesfully
+        WaitUtils.waitFor(3);
+        ReusableMethods.scrollDownActions();
         ExtentReportUtils.failAndCaptureScreenshot("Test fails. It is possible to create coupon with the past date");
         ExtentReportUtils.flush();
         Assert.assertFalse(pearlyManagerPage.couponCreationMessage.isDisplayed());

@@ -52,6 +52,7 @@ public class TC003 {
         ReusableMethods.selectByIndex(pearlyManagerPage.discountType,0);
         //6. Enter the percentage discount amount as 0 or negative .
         pearlyManagerPage.couponAmount.sendKeys("0");
+        ExtentReportUtils.passAndCaptureScreenshot("Filling a coupon amount as 0");
         //7. Set an expiration date for the coupon.
         pearlyManagerPage.expiryDate.sendKeys("2025-05-24");
         //8. Select the "Allow free shipping" option.
@@ -62,6 +63,8 @@ public class TC003 {
         JSUtils.clickWithTimeoutByJS(pearlyManagerPage.submitButton);
         ExtentReportUtils.passAndCaptureScreenshot("Filling coupon before creation with past date");
         //Assert coupon creation doesnt happens succesfully
+        WaitUtils.waitFor(3);
+        ReusableMethods.scrollDownActions();
         ExtentReportUtils.failAndCaptureScreenshot("Test fails. It is possible to create coupon with 0 amount");
         ExtentReportUtils.flush();
         Assert.assertFalse(pearlyManagerPage.couponCreationMessage.isDisplayed());
