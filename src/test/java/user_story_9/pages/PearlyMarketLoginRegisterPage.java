@@ -1,11 +1,20 @@
 package user_story_9.pages;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 public class PearlyMarketLoginRegisterPage {
+    public Actions y9signOut;
+    public Actions y9addresses;
+    public WebElement y9billingAdres;
+    public WebElement y9shippingAdres;
+    public WebElement y9ordersListesi;
+    public ReusableMethods y9orders;
+
     public PearlyMarketLoginRegisterPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }

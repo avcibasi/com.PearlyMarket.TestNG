@@ -47,6 +47,22 @@ public class ReusableMethods {
             }
         }
     }
+
+    public static void prMrktlogIn() {
+    }
+
+    public static void waitFor(int i) {
+    }
+
+    public static void click(WebElement c3Coupons) {
+    }
+
+    public static void bekle(int i) {
+    }
+
+    public static void waitForPageToLoad(int i) {
+    }
+
     //    RADIO BUTTON
     public void clickRadioByIndex(int index){
         int numOfRadio =Driver.getDriver().findElements(By.xpath("//input[@type='radio']")).size();

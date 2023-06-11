@@ -3,9 +3,17 @@ package user_story_11.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.w3c.dom.html.HTMLInputElement;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 public class PearlyMarketHomePage {
+    public WebElement vendorUserName;
+    public HTMLInputElement signInButton;
+    public WebElement signInHome;
+    public WebElement vendorPassword;
+    public ReusableMethods SignIn;
+
     public PearlyMarketHomePage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
